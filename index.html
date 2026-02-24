@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRF VPN</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+body{margin:0;background:#05070b;color:#00ff9c;font-family:Orbitron,monospace}
+.container{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center}
+h1{font-size:3rem;text-shadow:0 0 20px #00ff9c}
+.btn{border:1px solid #00ff9c;padding:14px 28px;margin-top:20px;color:#00ff9c;text-decoration:none;cursor:pointer;transition:.2s}
+.btn:hover{background:#00ff9c;color:#000;box-shadow:0 0 20px #00ff9c}
+.footer{position:fixed;bottom:10px;font-size:12px;opacity:.6}
+.hidden{display:none}
+.panel{max-width:500px;margin:auto;margin-top:100px}
+input,button{background:#000;border:1px solid #00ff9c;color:#00ff9c;padding:10px;margin:5px;width:100%}
+input:focus{outline:none;box-shadow:0 0 10px #00ff9c}
+#uploadStatus{margin-top:10px}
+.toplink{position:fixed;top:10px;right:20px;font-size:22px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="toplink" onclick="location.hash='/admin'">/</div>
+<div id="home" class="container">
+<h1>PRF VPN</h1>
+<p>Secure Cyber Tunnel</p>
+<button class="btn" onclick="downloadApp()">DOWNLOAD</button>
+<div class="footer">encrypted network interface</div>
+</div>
+<div id="login" class="hidden panel">
+<h2>Admin Access</h2>
+<input id="user" placeholder="username">
+<input id="pass" type="password" placeholder="password">
+<button onclick="login()">ENTER</button>
+<p id="loginMsg"></p>
+</div>
+<div id="admin" class="hidden panel">
+<h2>Upload Android APK</h2>
+<input type="file" id="apk" accept=".apk">
+<button onclick="upload()">UPLOAD</button>
+<p id="uploadStatus"></p>
+<button onclick="logout()">LOGOUT</button>
+</div>
+<script>
+function show(id){document.getElementById('home').classList.add('hidden');document.getElementById('login').classList.add('hidden');document.getElementById('admin').classList.add('hidden');document.getElementById(id).classList.remove('hidden')}
+function route(){if(location.hash==='#/admin'){if(localStorage.getItem('auth')==='ok')show('admin');else show('login')}else show('home')}
+window.onhashchange=route;route();
+function login(){if(user.value==='prf'&&pass.value==='prf123'){localStorage.setItem('auth','ok');location.hash='/admin'}else loginMsg.innerText='ACCESS DENIED'}
+function logout(){localStorage.removeItem('auth');location.hash=''}
+function upload(){let f=apk.files[0];if(!f)return;let r=new FileReader();r.onload=function(){localStorage.setItem('apk_name',f.name);localStorage.setItem('apk_data',r.result);uploadStatus.innerText='UPLOADED'};r.readAsDataURL(f)}
+function downloadApp(){let data=localStorage.getItem('apk_data');let name=localStorage.getItem('apk_name')||'prf-vpn.apk';if(!data){alert('file not uploaded');return;}let a=document.createElement('a');a.href=data;a.download=name;a.click()}
+</script>
+</body>
+</html>
