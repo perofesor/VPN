@@ -21,9 +21,21 @@
       "size": "300x250",
       "auto_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
       "manual_slides": [
-        { "image_url": "", "target_url": "", "is_gif": false },
-        { "image_url": "", "target_url": "", "is_gif": false },
-        { "image_url": "", "target_url": "", "is_gif": false }
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        },
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        },
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        }
       ]
     },
     "download_page": {
@@ -33,13 +45,34 @@
       "auto_banner_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
       "auto_popunder_code": "<script type=\"text/javascript\" src=\"https://pl29727387.effectivecpmnetwork.com/ee/a3/3c/eea33c3a2f6112ec3274436aa59593ff.js\"></script>",
       "banners": [
-        { "image_url": "", "target_url": "", "is_gif": false },
-        { "image_url": "", "target_url": "", "is_gif": false },
-        { "image_url": "", "target_url": "", "is_gif": false }
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        },
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        },
+        {
+          "image_url": "",
+          "target_url": "",
+          "is_gif": false
+        }
       ],
       "side_banners_enabled": true
     }
   },
   "sponsors": [],
-  "downloads": []
+  "downloads": [
+    {
+      "id": "dl_initial",
+      "version": "1.0.0",
+      "url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-universal.apk",
+      "size": "58 MB",
+      "notes": "نسخه اول Professor VPN — هسته واقعی Xray، کانفیگ رایگان، پینگ واقعی، تبلیغات و اسپانسر همگام با پنل",
+      "date": "2026-06-14T00:00:00Z"
+    }
+  ]
 }
