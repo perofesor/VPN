@@ -1,17 +1,17 @@
 {
-  "version": 1,
-  "updated_at": "2026-06-14T00:00:00Z",
+  "version": 2,
+  "updated_at": "2026-06-14T12:00:00Z",
   "app": {
     "name": "Professor VPN",
-    "latest_version": "1.0.0",
-    "latest_version_code": 1,
+    "latest_version": "2.4.0",
+    "latest_version_code": 6,
     "contact": {
       "title": "ارتباط با ما",
       "text": "برای پشتیبانی و دریافت کانفیگ‌های اختصاصی با ما در ارتباط باشید.",
       "telegram": "https://t.me/professorvpn",
       "whatsapp": "",
       "email": "",
-      "website": "https://vpn-one-teal.vercel.app/"
+      "website": "https://perofesor.github.io/VPN/"
     }
   },
   "ads": {
@@ -19,22 +19,26 @@
       "enabled": true,
       "mode": "auto",
       "size": "300x250",
-      "auto_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
-      "manual_slides": [
+      "auto_code": "<script type=\"text/javascript\">atOptions={'key':'c491b254d8feec1592785c5c8b762318','format':'iframe','height':250,'width':300,'params':{}};</script><script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
+      "manual_slides": [],
+      "html_slides": [
         {
+          "title": "Native Banner",
+          "html": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl29727385.effectivecpmnetwork.com/a672491ccb63deef95456c29e16556af/invoke.js\"></script><div id=\"container-a672491ccb63deef95456c29e16556af\"></div>",
           "image_url": "",
-          "target_url": "",
-          "is_gif": false
+          "target_url": ""
         },
         {
+          "title": "Banner 300x250",
+          "html": "<script type=\"text/javascript\">atOptions={'key':'c491b254d8feec1592785c5c8b762318','format':'iframe','height':250,'width':300,'params':{}};</script><script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
           "image_url": "",
-          "target_url": "",
-          "is_gif": false
+          "target_url": ""
         },
         {
+          "title": "Popunder",
+          "html": "<script type=\"text/javascript\" src=\"https://pl29727387.effectivecpmnetwork.com/ee/a3/3c/eea33c3a2f6112ec3274436aa59593ff.js\"></script><div style=\"color:#7CFFB0;font-family:monospace;text-align:center;padding:18px\">PROFESSOR VPN<br><small style=\"opacity:.7\">Sponsored</small></div>",
           "image_url": "",
-          "target_url": "",
-          "is_gif": false
+          "target_url": ""
         }
       ]
     },
@@ -44,34 +48,26 @@
       "auto_native_code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl29727385.effectivecpmnetwork.com/a672491ccb63deef95456c29e16556af/invoke.js\"></script>\n<div id=\"container-a672491ccb63deef95456c29e16556af\"></div>",
       "auto_banner_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
       "auto_popunder_code": "<script type=\"text/javascript\" src=\"https://pl29727387.effectivecpmnetwork.com/ee/a3/3c/eea33c3a2f6112ec3274436aa59593ff.js\"></script>",
-      "banners": [
-        {
-          "image_url": "",
-          "target_url": "",
-          "is_gif": false
-        },
-        {
-          "image_url": "",
-          "target_url": "",
-          "is_gif": false
-        },
-        {
-          "image_url": "",
-          "target_url": "",
-          "is_gif": false
-        }
-      ],
+      "banners": [],
       "side_banners_enabled": true
     }
   },
   "sponsors": [],
   "downloads": [
     {
+      "id": "dl_v2",
+      "version": "2.4.0",
+      "url": "https://github.com/perofesor/VPN/raw/main/ProfessorVPN-v2.4.0-universal.apk",
+      "size": "59 MB",
+      "notes": "نسخه ۲.۴.۰ — بازطراحی UI سایبرپانک، کلید لامپی، تب کانفیگ رایگان با Auto Test، پینگ واقعی، فقط VLESS/VMESS، تبلیغات ۳ اسلایده همگام با پنل",
+      "date": "2026-06-14T12:00:00Z"
+    },
+    {
       "id": "dl_initial",
       "version": "1.0.0",
       "url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-universal.apk",
       "size": "58 MB",
-      "notes": "نسخه اول Professor VPN — هسته واقعی Xray، کانفیگ رایگان، پینگ واقعی، تبلیغات و اسپانسر همگام با پنل",
+      "notes": "نسخه اول Professor VPN",
       "date": "2026-06-14T00:00:00Z"
     }
   ]
