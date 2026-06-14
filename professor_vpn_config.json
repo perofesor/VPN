@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "updated_at": "2026-06-14T00:00:00Z",
+  "app": {
+    "name": "Professor VPN",
+    "latest_version": "1.0.0",
+    "latest_version_code": 1,
+    "contact": {
+      "title": "ارتباط با ما",
+      "text": "برای پشتیبانی و دریافت کانفیگ‌های اختصاصی با ما در ارتباط باشید.",
+      "telegram": "https://t.me/professorvpn",
+      "whatsapp": "",
+      "email": "",
+      "website": "https://vpn-one-teal.vercel.app/"
+    }
+  },
+  "ads": {
+    "in_app_banner": {
+      "enabled": true,
+      "mode": "auto",
+      "size": "300x250",
+      "auto_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
+      "manual_slides": [
+        { "image_url": "", "target_url": "", "is_gif": false },
+        { "image_url": "", "target_url": "", "is_gif": false },
+        { "image_url": "", "target_url": "", "is_gif": false }
+      ]
+    },
+    "download_page": {
+      "enabled": true,
+      "mode": "auto",
+      "auto_native_code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl29727385.effectivecpmnetwork.com/a672491ccb63deef95456c29e16556af/invoke.js\"></script>\n<div id=\"container-a672491ccb63deef95456c29e16556af\"></div>",
+      "auto_banner_code": "<script type=\"text/javascript\">\n\tatOptions = {\n\t\t'key' : 'c491b254d8feec1592785c5c8b762318',\n\t\t'format' : 'iframe',\n\t\t'height' : 250,\n\t\t'width' : 300,\n\t\t'params' : {}\n\t};\n</script>\n<script type=\"text/javascript\" src=\"https://www.highperformanceformat.com/c491b254d8feec1592785c5c8b762318/invoke.js\"></script>",
+      "auto_popunder_code": "<script type=\"text/javascript\" src=\"https://pl29727387.effectivecpmnetwork.com/ee/a3/3c/eea33c3a2f6112ec3274436aa59593ff.js\"></script>",
+      "banners": [
+        { "image_url": "", "target_url": "", "is_gif": false },
+        { "image_url": "", "target_url": "", "is_gif": false },
+        { "image_url": "", "target_url": "", "is_gif": false }
+      ],
+      "side_banners_enabled": true
+    }
+  },
+  "sponsors": [],
+  "downloads": []
+}
