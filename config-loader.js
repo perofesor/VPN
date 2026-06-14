@@ -12,16 +12,18 @@ const RAW_URL = "professor_vpn_config.json";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* ---- matrix background ---- */
+/* ---- matrix background (green with occasional red glitch columns) ---- */
 (function(){
-  const cv=document.getElementById("matrix"),ctx=cv.getContext("2d");let cols,drops;
-  const chars="01ﾊﾐﾋｰｳｼﾅﾓPVPN$#%".split("");
-  function rs(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/14);drops=Array(cols).fill(1);}
+  const cv=document.getElementById("matrix"),ctx=cv.getContext("2d");let cols,drops,red;
+  const chars="01ﾊﾐﾋｰｳｼﾅﾓPVPN$#%<>".split("");
+  function rs(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/14);
+    drops=Array(cols).fill(1);red=Array(cols).fill(0).map(()=>Math.random()<0.10);}
   rs();addEventListener("resize",rs);
-  setInterval(()=>{ctx.fillStyle="rgba(5,6,14,0.07)";ctx.fillRect(0,0,cv.width,cv.height);
-    ctx.fillStyle="#00ff9c";ctx.font="13px monospace";
-    drops.forEach((y,i)=>{ctx.fillText(chars[Math.random()*chars.length|0],i*14,y*14);
-      if(y*14>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]++;});},75);
+  setInterval(()=>{ctx.fillStyle="rgba(0,0,0,0.08)";ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.font="13px monospace";
+    drops.forEach((y,i)=>{ctx.fillStyle=red[i]?"#ff1133":"#00ff66";
+      ctx.fillText(chars[Math.random()*chars.length|0],i*14,y*14);
+      if(y*14>cv.height&&Math.random()>0.975){drops[i]=0;red[i]=Math.random()<0.10;}drops[i]++;});},70);
 })();
 
 function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
@@ -91,23 +93,29 @@ function render(cfg){
   bc.innerHTML="";
   const showManual = wa.enabled && wa.mode==="manual";
   const banners = wa.banners||[];
+  // 3 independent auto ad slots (auto_slides), falling back to auto_banner_code
+  const autoSlides = (wa.auto_slides&&wa.auto_slides.length?wa.auto_slides:[wa.auto_banner_code]).filter(Boolean);
   for(let i=0;i<3;i++){
     const b=banners[i]||{};
     const div=document.createElement("div"); div.className="banner";
     if(showManual && b.image_url){
       div.innerHTML=`<img src="${esc(b.image_url)}" alt="ad">${b.is_gif?'<span class="ribbon">GIF</span>':''}`;
       if(b.target_url) div.onclick=()=>window.open(b.target_url,"_blank");
+      bc.appendChild(div);
+    } else if(wa.enabled && wa.mode==="auto" && autoSlides.length){
+      bc.appendChild(div);
+      injectAd(div, autoSlides[i % autoSlides.length]);
     } else {
       div.innerHTML=`<div class="ph">بنر ${i+1}<br><small>Banner ${i+1}</small></div>`;
+      bc.appendChild(div);
     }
-    bc.appendChild(div);
   }
 
-  /* auto ads (Adsterra) */
+  /* auto ads (sidebar + native host) */
   if(wa.enabled && wa.mode==="auto"){
-    injectAd(document.getElementById("auto-banner-slot"), wa.auto_banner_code);
+    injectAd(document.getElementById("auto-banner-slot"), autoSlides[0]||wa.auto_banner_code);
     injectAd(document.getElementById("native-host"), wa.auto_native_code);
-    injectAd(document.getElementById("side-ad-2"), wa.auto_popunder_code);
+    if(wa.auto_popunder_code) injectAd(document.getElementById("side-ad-2"), wa.auto_popunder_code);
   }
 
   /* bottom / side banners (manual fallback duplicates) */
