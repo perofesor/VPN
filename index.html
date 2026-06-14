@@ -1,66 +1,282 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRF VPN</title>
+<title>Professor VPN — دانلود</title>
+<meta name="description" content="دانلود Professor VPN — فیلترشکن سریع و امن اندروید">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-body{margin:0;background:#05070b;color:#00ff9c;font-family:Orbitron,monospace}
-.container{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;text-align:center}
-h1{font-size:3rem;text-shadow:0 0 20px #00ff9c}
-.btn{border:1px solid #00ff9c;padding:14px 28px;margin-top:20px;color:#00ff9c;text-decoration:none;cursor:pointer;transition:.2s}
-.btn:hover{background:#00ff9c;color:#000;box-shadow:0 0 20px #00ff9c}
-.footer{position:fixed;bottom:10px;font-size:12px;opacity:.6}
-.hidden{display:none}
-.panel{max-width:500px;margin:auto;margin-top:100px}
-input,button{background:#000;border:1px solid #00ff9c;color:#00ff9c;padding:10px;margin:5px;width:100%}
-input:focus{outline:none;box-shadow:0 0 10px #00ff9c}
-#uploadStatus{margin-top:10px}
-.toplink{position:fixed;top:10px;right:20px;font-size:22px;cursor:pointer}
+:root{
+  --bg:#05060e;--bg2:#0a0e1c;--panel:#0d1326;--card:#11192f;
+  --green:#00ff9c;--cyan:#00e5ff;--mag:#ff2d6f;--purple:#8a5bff;
+  --txt:#d6f5e8;--dim:#5a7a8f;--line:#1a2742;
+}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',Tahoma,'Courier New',monospace}
+html,body{min-height:100%}
+body{background:var(--bg);color:var(--txt);overflow-x:hidden;line-height:1.6}
+#matrix{position:fixed;inset:0;z-index:0;opacity:.13}
+.layout{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:24px 16px 60px;
+  display:grid;grid-template-columns:1fr 320px;gap:24px}
+@media(max-width:980px){.layout{grid-template-columns:1fr}.side{order:3}}
+.main{min-width:0}
+a{color:var(--cyan);text-decoration:none}
+.glow{text-shadow:0 0 10px var(--green),0 0 24px rgba(0,255,156,.35)}
+
+/* hero */
+.hero{text-align:center;padding:34px 16px 26px;border:1px solid var(--line);border-radius:18px;
+  background:radial-gradient(circle at 50% 0%,rgba(0,255,156,.07),transparent 70%),var(--panel);margin-bottom:22px}
+.logo{display:inline-flex;align-items:center;gap:12px;margin-bottom:10px}
+.logo .ic{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--green),var(--cyan));color:#04130d;font-size:28px;font-weight:bold;box-shadow:0 0 26px rgba(0,255,156,.5)}
+.hero h1{font-size:34px;letter-spacing:2px;color:var(--green)}
+.hero .tag{color:var(--dim);font-size:13px;letter-spacing:3px;margin-top:6px}
+.hero .ver{display:inline-block;margin-top:14px;font-size:12px;color:var(--cyan);border:1px solid var(--line);padding:5px 14px;border-radius:20px}
+
+/* download button */
+.dl-btn{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px auto 6px;max-width:420px;
+  padding:18px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--cyan));color:#04130d;
+  font-size:18px;font-weight:bold;letter-spacing:1px;cursor:pointer;transition:.18s;box-shadow:0 0 30px rgba(0,255,156,.35)}
+.dl-btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.dl-meta{text-align:center;color:var(--dim);font-size:12px}
+
+/* sections */
+.sec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;margin-bottom:20px}
+.sec h2{font-size:16px;color:var(--cyan);letter-spacing:1px;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.feat .f{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:14px;font-size:13px}
+.feat .f .e{font-size:22px;display:block;margin-bottom:6px}
+
+/* banners */
+.banners{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
+@media(max-width:760px){.banners{grid-template-columns:1fr}}
+.banner{position:relative;border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:160px;
+  background:linear-gradient(135deg,var(--panel),var(--bg2));display:flex;align-items:center;justify-content:center;
+  cursor:pointer;transition:.18s}
+.banner:hover{border-color:var(--green);box-shadow:0 0 20px rgba(0,255,156,.18);transform:translateY(-2px)}
+.banner img{width:100%;height:100%;object-fit:cover;display:block}
+.banner .ph{color:var(--dim);font-size:12px;text-align:center;padding:20px}
+.banner .ribbon{position:absolute;top:8px;right:8px;background:rgba(0,0,0,.6);color:var(--green);font-size:9px;padding:3px 8px;border-radius:12px;letter-spacing:1px}
+
+/* downloads list */
+.dl-list .item{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--bg2);
+  border:1px solid var(--line);border-radius:11px;padding:14px;margin-bottom:10px;flex-wrap:wrap}
+.dl-list .item .v{color:var(--green);font-weight:bold;font-size:15px}
+.dl-list .item .n{color:var(--dim);font-size:12px}
+.dl-list .item .get{background:linear-gradient(135deg,var(--green),var(--cyan));color:#04130d;padding:9px 16px;border-radius:9px;font-weight:bold;font-size:13px}
+
+/* sidebar ads */
+.side{display:flex;flex-direction:column;gap:16px}
+.ad-slot{border:1px solid var(--line);border-radius:14px;background:var(--panel);padding:12px;min-height:120px;
+  display:flex;align-items:center;justify-content:center}
+.ad-slot .lbl{position:absolute;font-size:9px;color:var(--dim)}
+.ad-300{width:300px;max-width:100%;min-height:250px;margin:0 auto;display:flex;align-items:center;justify-content:center}
+
+footer{text-align:center;color:var(--dim);font-size:12px;padding:26px 0;border-top:1px solid var(--line);margin-top:20px;position:relative;z-index:2}
+.bottom-ads{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0}
 </style>
 </head>
 <body>
-<div class="toplink" onclick="location.hash='/admin'">/</div>
-<div id="home" class="container">
-<h1>PRF VPN</h1>
-<p>Secure Cyber Tunnel</p>
-<button class="btn" onclick="downloadApp()">DOWNLOAD</button>
+<canvas id="matrix"></canvas>
 
-<!-- BEGIN AADS AD UNIT 2428564 -->
-<div id="frame" style="width: 100%;margin: auto;position: relative; z-index: 99998;">
-<iframe data-aa='2428564' src='https://acceptable.a-ads.com/2428564/?size=Adaptive'
-style='border:0; padding:0; width:70%; height:auto; overflow:hidden;display: block;margin: auto'></iframe>
-</div>
-<!-- END AADS AD UNIT 2428564 -->
+<div class="layout">
+  <div class="main">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="logo">
+        <div class="ic">P</div>
+        <div style="text-align:right">
+          <h1 class="glow">Professor VPN</h1>
+          <div class="tag">FAST · SECURE · UNFILTERED</div>
+        </div>
+      </div>
+      <div class="ver" id="latest-ver">v1.0.0</div>
+      <div class="dl-btn" id="main-dl">⬇ دانلود مستقیم برای اندروید</div>
+      <div class="dl-meta" id="dl-meta">APK یونیورسال · امضا شده · Android 7+</div>
+    </div>
 
-<div class="footer">encrypted network interface</div>
+    <!-- TOP BANNERS (3) -->
+    <div class="banners" id="banners"></div>
+
+    <!-- FEATURES -->
+    <div class="sec">
+      <h2>⚡ ویژگی‌ها</h2>
+      <div class="feat">
+        <div class="f"><span class="e">🚀</span>سرعت بالا و پایدار</div>
+        <div class="f"><span class="e">🔒</span>هسته واقعی Xray-core</div>
+        <div class="f"><span class="e">🌐</span>کانفیگ رایگان داخلی</div>
+        <div class="f"><span class="e">🛡️</span>بدون لاگ، امن</div>
+        <div class="f"><span class="e">📡</span>پینگ واقعی</div>
+        <div class="f"><span class="e">🎯</span>تست خودکار سرورها</div>
+      </div>
+    </div>
+
+    <!-- DOWNLOADS LIST -->
+    <div class="sec">
+      <h2>📦 نسخه‌های دانلود</h2>
+      <div class="dl-list" id="dl-list"><div class="n">در حال بارگذاری...</div></div>
+    </div>
+
+    <!-- BOTTOM ADS -->
+    <div class="bottom-ads" id="bottom-ads"></div>
+
+    <footer>
+      © Professor VPN — <span id="year"></span> · ساخته شده برای دور زدن سانسور اینترنت
+    </footer>
+  </div>
+
+  <!-- SIDEBAR -->
+  <aside class="side">
+    <div class="ad-slot" id="side-ad-1"><div class="ad-300" id="auto-banner-slot"><span class="n" style="color:var(--dim)">تبلیغ</span></div></div>
+    <div class="ad-slot" id="side-ad-2"></div>
+    <div class="sec" style="margin:0">
+      <h2>🔗 لینک‌ها</h2>
+      <div id="contact-links" style="font-size:13px"></div>
+    </div>
+  </aside>
 </div>
-<div id="login" class="hidden panel">
-<h2>Admin Access</h2>
-<input id="user" placeholder="username">
-<input id="pass" type="password" placeholder="password">
-<button onclick="login()">ENTER</button>
-<p id="loginMsg"></p>
-</div>
-<div id="admin" class="hidden panel">
-<h2>Upload Android APK</h2>
-<input type="file" id="apk" accept=".apk">
-<button onclick="upload()">UPLOAD</button>
-<p id="uploadStatus"></p>
-<button onclick="logout()">LOGOUT</button>
-</div>
+
+<!-- hidden host for popunder/native scripts -->
+<div id="native-host" style="position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:0 16px"></div>
+
 <script>
-const U='cHJm';
-const P='cHJmMTIz';
-function dec(x){return atob(x)}
-function show(id){document.getElementById('home').classList.add('hidden');document.getElementById('login').classList.add('hidden');document.getElementById('admin').classList.add('hidden');document.getElementById(id).classList.remove('hidden')}
-function route(){if(location.hash==='#/admin'){if(localStorage.getItem('auth')==='ok')show('admin');else show('login')}else show('home')}
-window.onhashchange=route;route();
-function login(){if(user.value===dec(U)&&pass.value===dec(P)){localStorage.setItem('auth','ok');location.hash='/admin'}else loginMsg.innerText='ACCESS DENIED'}
-function logout(){localStorage.removeItem('auth');location.hash=''}
-function upload(){let f=apk.files[0];if(!f)return;let r=new FileReader();r.onload=function(){localStorage.setItem('apk_name',f.name);localStorage.setItem('apk_data',r.result);uploadStatus.innerText='UPLOADED'};r.readAsDataURL(f)}
-function downloadApp(){let data=localStorage.getItem('apk_data');let name=localStorage.getItem('apk_name')||'prf-vpn.apk';if(!data){alert('file not uploaded');return;}let a=document.createElement('a');a.href=data;a.download=name;a.click()}
+/* ============================================================
+   Professor VPN — Download Page loader
+   Fetches the shared config JSON (written by the admin panel)
+   and renders downloads, banners and Adsterra ads live.
+   ============================================================ */
+
+/* CONFIG SOURCE — the raw JSON file on GitHub (admin repo).
+   Update RAW_URL if you move the file. A timestamp cache-buster
+   keeps it live so panel changes appear immediately. */
+const RAW_URL = "https://raw.githubusercontent.com/prfgame/adminpanel/main/professor_vpn_config.json";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* ---- matrix background ---- */
+(function(){
+  const cv=document.getElementById("matrix"),ctx=cv.getContext("2d");let cols,drops;
+  const chars="01ﾊﾐﾋｰｳｼﾅﾓPVPN$#%".split("");
+  function rs(){cv.width=innerWidth;cv.height=innerHeight;cols=Math.floor(cv.width/14);drops=Array(cols).fill(1);}
+  rs();addEventListener("resize",rs);
+  setInterval(()=>{ctx.fillStyle="rgba(5,6,14,0.07)";ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.fillStyle="#00ff9c";ctx.font="13px monospace";
+    drops.forEach((y,i)=>{ctx.fillText(chars[Math.random()*chars.length|0],i*14,y*14);
+      if(y*14>cv.height&&Math.random()>0.975)drops[i]=0;drops[i]++;});},75);
+})();
+
+function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+/* inject arbitrary ad HTML/scripts (scripts need manual re-creation) */
+function injectAd(container, html){
+  if(!html||!html.trim()) return false;
+  container.innerHTML="";
+  const tmp=document.createElement("div"); tmp.innerHTML=html;
+  // move non-script nodes
+  [...tmp.childNodes].forEach(n=>{
+    if(n.tagName==="SCRIPT"){
+      const s=document.createElement("script");
+      [...n.attributes].forEach(a=>s.setAttribute(a.name,a.value));
+      if(n.textContent) s.textContent=n.textContent;
+      container.appendChild(s);
+    } else {
+      container.appendChild(n.cloneNode(true));
+    }
+  });
+  return true;
+}
+
+async function load(){
+  let cfg;
+  try{
+    const r=await fetch(RAW_URL+"?t="+Date.now(),{cache:"no-store"});
+    cfg=await r.json();
+  }catch(e){
+    document.getElementById("dl-list").innerHTML='<div class="n">فعلاً نسخه‌ای ثبت نشده است.</div>';
+    return;
+  }
+  render(cfg);
+}
+
+function render(cfg){
+  const app=cfg.app||{}, ads=cfg.ads||{}, wa=ads.download_page||{};
+
+  /* version + main download */
+  const latest=(cfg.downloads&&cfg.downloads[0])||null;
+  document.getElementById("latest-ver").textContent="v"+(app.latest_version||"1.0.0");
+  const mainBtn=document.getElementById("main-dl");
+  if(latest){
+    mainBtn.onclick=()=>location.href=latest.url;
+    document.getElementById("dl-meta").textContent=`${latest.size||""} · امضا شده · Android 7+`;
+  } else {
+    mainBtn.onclick=()=>document.getElementById("dl-list").scrollIntoView({behavior:"smooth"});
+  }
+
+  /* downloads list */
+  const dl=document.getElementById("dl-list");
+  if(cfg.downloads&&cfg.downloads.length){
+    dl.innerHTML="";
+    cfg.downloads.forEach((d,i)=>{
+      const it=document.createElement("div"); it.className="item";
+      it.innerHTML=`<div><div class="v">v${esc(d.version)} ${i===0?'⭐':''}</div>
+        <div class="n">${esc(d.size||"")} · ${esc(d.notes||"")}</div></div>
+        <a class="get" href="${esc(d.url)}">دانلود</a>`;
+      dl.appendChild(it);
+    });
+  } else {
+    dl.innerHTML='<div class="n">به‌زودی...</div>';
+  }
+
+  /* top 3 banners */
+  const bc=document.getElementById("banners");
+  bc.innerHTML="";
+  const showManual = wa.enabled && wa.mode==="manual";
+  const banners = wa.banners||[];
+  for(let i=0;i<3;i++){
+    const b=banners[i]||{};
+    const div=document.createElement("div"); div.className="banner";
+    if(showManual && b.image_url){
+      div.innerHTML=`<img src="${esc(b.image_url)}" alt="ad">${b.is_gif?'<span class="ribbon">GIF</span>':''}`;
+      if(b.target_url) div.onclick=()=>window.open(b.target_url,"_blank");
+    } else {
+      div.innerHTML=`<div class="ph">بنر ${i+1}<br><small>Banner ${i+1}</small></div>`;
+    }
+    bc.appendChild(div);
+  }
+
+  /* auto ads (Adsterra) */
+  if(wa.enabled && wa.mode==="auto"){
+    injectAd(document.getElementById("auto-banner-slot"), wa.auto_banner_code);
+    injectAd(document.getElementById("native-host"), wa.auto_native_code);
+    injectAd(document.getElementById("side-ad-2"), wa.auto_popunder_code);
+  }
+
+  /* bottom / side banners (manual fallback duplicates) */
+  const bottom=document.getElementById("bottom-ads");
+  bottom.innerHTML="";
+  if(wa.enabled && wa.side_banners_enabled){
+    if(wa.mode==="manual"){
+      banners.forEach(b=>{ if(b.image_url){
+        const d=document.createElement("div"); d.className="banner"; d.style.minHeight="120px";
+        d.innerHTML=`<img src="${esc(b.image_url)}">`;
+        if(b.target_url) d.onclick=()=>window.open(b.target_url,"_blank");
+        bottom.appendChild(d);
+      }});
+    }
+  }
+
+  /* contact links */
+  const cl=document.getElementById("contact-links");
+  const c=app.contact||{};
+  const links=[];
+  if(c.telegram) links.push(`<div style="margin:6px 0">📨 <a href="${esc(c.telegram)}" target="_blank">تلگرام</a></div>`);
+  if(c.whatsapp) links.push(`<div style="margin:6px 0">💬 <a href="${esc(c.whatsapp)}" target="_blank">واتساپ</a></div>`);
+  if(c.website) links.push(`<div style="margin:6px 0">🌐 <a href="${esc(c.website)}" target="_blank">وب‌سایت</a></div>`);
+  if(c.email) links.push(`<div style="margin:6px 0">✉ ${esc(c.email)}</div>`);
+  cl.innerHTML=links.join("")||'<div class="n" style="color:var(--dim)">—</div>';
+}
+
+load();
+
 </script>
 </body>
 </html>
