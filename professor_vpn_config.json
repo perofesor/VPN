@@ -55,7 +55,8 @@
     {
       "id": "dl_250",
       "version": "2.5.0",
-      "url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v2.5.0-universal.apk",
+      "url": "https://vpn-one-teal.vercel.app/ProfessorVPN-v2.5.0-universal.apk",
+      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v2.5.0-universal.apk",
       "size": "60 MB",
       "notes": "آپدیت ۲.۵ — رابط کاربری کاملاً مشکی و هکری، انیمیشن چشم اژدها، گلیچ، لودینگ جدید، منابع کانفیگ به‌روز، پینگ دقیق، crash handler",
       "date": "2026-06-14T00:00:00Z"
