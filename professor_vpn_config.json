@@ -1,0 +1,26 @@
+{
+  "version": 7,
+  "updated_at": "2026-06-15T00:00:00Z",
+  "app": {
+    "name": "Professor VPN",
+    "latest_version": "3.0",
+    "latest_version_code": 13,
+    "contact": {
+      "title": "پشتیبانی",
+      "text": "جهت ثبت تبلیغات و استعلام قیمت بنر به آیدی زیر در تلگرام پیام دهید:",
+      "telegram": "https://t.me/mx_pr",
+      "telegram_id": "@mx_pr"
+    }
+  },
+  "downloads": [
+    {
+      "id": "dl_300",
+      "version": "3.0",
+      "url": "https://github.com/prfgame/prf-VPN/releases/latest/download/ProfessorVPN-v3.0-universal.apk",
+      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v3.0-universal.apk",
+      "size": "60 MB",
+      "notes": "نسخه ۳.۰ — لوگوی جدید اپ، چشم اتصال واقعی‌تر و کوچک‌تر با مردمک بادامی و پلک منحنی، پایداری اتصال و همگام‌سازی وضعیت در پس‌زمینه/پیش‌زمینه، بازطراحی کامل تب کانفیگ‌های رایگان (حذف جستجوی خودکار، جستجو +۱۰۰ از مخزن cccfigs، انتخاب/حذف همه/پینگ همه)، اصلاح چسباندن کانفیگ، پینگ قابل‌اعتماد با هدف مناسب کاربران ایران، تب اسپانسر محدودشده (فقط پینگ)، پنل دارک سایبری با انتشار سریع و آیکون تلگرام بنفش",
+      "date": "2026-06-15T00:00:00Z"
+    }
+  ]
+}
