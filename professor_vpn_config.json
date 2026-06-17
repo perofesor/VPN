@@ -1,10 +1,10 @@
 {
-  "version": 9,
-  "updated_at": "2026-06-17T12:00:00Z",
+  "version": 10,
+  "updated_at": "2026-06-17T14:00:00Z",
   "app": {
     "name": "Professor VPN",
-    "latest_version": "3.5",
-    "latest_version_code": 18,
+    "latest_version": "3.6",
+    "latest_version_code": 19,
     "contact": {
       "title": "پشتیبانی",
       "text": "جهت ثبت تبلیغات و استعلام قیمت بنر به آیدی زیر در تلگرام پیام دهید:",
@@ -14,13 +14,13 @@
   },
   "downloads": [
     {
-      "id": "dl_350",
-      "version": "3.5",
-      "url": "https://github.com/prfgame/prf-VPN/releases/latest/download/ProfessorVPN-v3.5-universal.apk",
-      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v3.5-universal.apk",
+      "id": "dl_360",
+      "version": "3.6",
+      "url": "https://github.com/prfgame/prf-VPN/releases/latest/download/ProfessorVPN-v3.6-universal.apk",
+      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v3.6-universal.apk",
       "size": "62 MB",
-      "notes": "نسخه ۳.۵ — بخش «کاربران» در پنل مدیریت (آنلاین/آفلاین/همه) کاملاً حریم‌خصوصی‌محور و بدون هیچ اطلاعات شخصی، مدیریت جداگانه لینک‌های تلگرام/بنر/اسپانسر، تم تیره بنفش-مشکی پریمیوم، بارگذاری و انتشار سریع‌تر مدیا با پیش‌نمایش زنده، آیکن تلگرام بنفش کنار عنوان (لینک از پنل)، بنر تبلیغاتی بلندتر و واضح‌تر با پشتیبانی تصویر/گیف/متن، چشم اتصال طبیعی‌تر (قرنیه کوچک‌تر و گردتر، مژه‌های چسبیده به پلک، پلک‌زدن نرم‌تر، حرکت طبیعی مردمک)، پایداری بیشتر تونل در کل دستگاه و مقاومت بالاتر در برابر کرش",
-      "date": "2026-06-17T12:00:00Z"
+      "notes": "نسخه ۳.۶ — رفع باگ آمار کاربران در پنل مدیریت (خطای CORS برطرف شد و آمار آنلاین/آفلاین/همه درست خوانده می‌شود)، رفع لگ و هنگ برنامه (کاهش بار رندر چشم و محدودسازی نرخ فریم)، اصلاح مژه‌ها به حالت طبیعی و سبک، اصلاح بنر تبلیغاتی: نمایش کامل تصویر بدون بریدگی و بدون خروج از کادر با اندازه ثابت و حاشیه امن، پایداری بیشتر",
+      "date": "2026-06-17T14:00:00Z"
     }
   ]
 }
