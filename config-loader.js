@@ -53,6 +53,33 @@ function renderDownloads(cfg){
     mainBtn.onclick = scrollToSupport;
     document.getElementById("dl-meta").textContent = "به‌زودی…";
   }
+
+  renderChangelog(latest, app);
+}
+
+/* ---------- what's new changelog ---------- */
+function renderChangelog(latest, app){
+  var block = document.getElementById("changelog");
+  var list = document.getElementById("cl-list");
+  var ver = document.getElementById("cl-ver");
+  if (!block || !list || !ver) return;
+
+  var items = (latest && Array.isArray(latest.changelog)) ? latest.changelog : [];
+  if (!items.length){
+    block.classList.add("hidden");
+    return;
+  }
+
+  ver.textContent = "نسخه " + ((latest && latest.version) || (app && app.latest_version) || "");
+
+  list.textContent = "";
+  for (var i = 0; i < items.length; i++){
+    var li = document.createElement("li");
+    li.textContent = items[i];
+    list.appendChild(li);
+  }
+
+  block.classList.remove("hidden");
 }
 
 /* ---------- panel-controlled website banner + contact (LIVE) ---------- */

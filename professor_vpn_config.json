@@ -1,9 +1,10 @@
 {
-  "version": 10,
-  "updated_at": "2026-06-17T14:00:00Z",
+  "version": 11,
+  "updated_at": "2026-06-22T07:30:00Z",
   "app": {
     "name": "Professor VPN",
-    "latest_version": "3.6",
+    "latest_version": "3.8",
+    "min_supported_version": "3.6",
     "latest_version_code": 19,
     "contact": {
       "title": "پشتیبانی",
@@ -14,13 +15,22 @@
   },
   "downloads": [
     {
-      "id": "dl_360",
-      "version": "3.6",
-      "url": "https://github.com/prfgame/prf-VPN/releases/latest/download/ProfessorVPN-v3.6-universal.apk",
-      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v3.6-universal.apk",
-      "size": "62 MB",
-      "notes": "نسخه ۳.۶ — رفع باگ آمار کاربران در پنل مدیریت (خطای CORS برطرف شد و آمار آنلاین/آفلاین/همه درست خوانده می‌شود)، رفع لگ و هنگ برنامه (کاهش بار رندر چشم و محدودسازی نرخ فریم)، اصلاح مژه‌ها به حالت طبیعی و سبک، اصلاح بنر تبلیغاتی: نمایش کامل تصویر بدون بریدگی و بدون خروج از کادر با اندازه ثابت و حاشیه امن، پایداری بیشتر",
-      "date": "2026-06-17T14:00:00Z"
+      "label": "Universal APK · همه دستگاه‌ها",
+      "version": "3.8",
+      "abi": "universal",
+      "size_mb": null,
+      "url": "https://github.com/prfgame/prf-VPN/releases/latest/download/ProfessorVPN-v3.8-universal.apk",
+      "mirror_url": "https://github.com/prfgame/prf-VPN/raw/main/build/ProfessorVPN-v3.8-universal.apk",
+      "date": "2026-06-22T07:19:10Z",
+      "changelog": [
+        "ظاهر دکمه اتصال کامل عوض شد: انیمیشن جدید Liquid Orb با ۵ حالت و قوس درصد اتصال زنده.",
+        "تب پینگ سریع‌تر شد و نتایج بین تب‌ها از بین نمی‌رود؛ سرورهای موفق به‌صورت زنده مرتب می‌شوند.",
+        "منبع کانفیگ‌های رایگان به مخزن جدید (prfgame/CC_new) منتقل شد؛ ۱۲۰ کانفیگ تازه در هر بار «نمایش بیشتر».",
+        "پایداری اتصال بهتر شد: حالت دیبونس، watchdog با عقب‌نشینی پلکانی و حفظ تونل بعد از قطع وای‌فای یا swipe برنامه.",
+        "چسباندن هوشمند از کلیپ‌بورد با تاریخچهٔ اختیاری (Settings → حریم خصوصی).",
+        "لینک تلگرام قابل کنترل از پنل ادمین بدون نیاز به آپدیت برنامه.",
+        "ترجمهٔ کامل فارسی/انگلیسی + بازبینی RTL."
+      ]
     }
   ]
 }
