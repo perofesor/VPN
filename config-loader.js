@@ -33,7 +33,7 @@ function loadDownloads(){
     .then(renderDownloads)
     .catch(function(){
       var meta = document.getElementById("dl-meta");
-      if (meta) meta.textContent = "فعلاً نسخه‌ای ثبت نشده است.";
+      if (meta) meta.textContent = "No version available yet.";
     });
 }
 
@@ -48,38 +48,11 @@ function renderDownloads(cfg){
   if (latest){
     mainBtn.onclick = function(){ location.href = latest.url; };
     document.getElementById("dl-meta").textContent =
-      (latest.size ? latest.size + " · " : "") + "امضا شده · Android 7+";
+      (latest.size ? latest.size + " · " : "") + "Signed · Android 7+";
   } else {
     mainBtn.onclick = scrollToSupport;
-    document.getElementById("dl-meta").textContent = "به‌زودی…";
+    document.getElementById("dl-meta").textContent = "Coming soon…";
   }
-
-  renderChangelog(latest, app);
-}
-
-/* ---------- what's new changelog ---------- */
-function renderChangelog(latest, app){
-  var block = document.getElementById("changelog");
-  var list = document.getElementById("cl-list");
-  var ver = document.getElementById("cl-ver");
-  if (!block || !list || !ver) return;
-
-  var items = (latest && Array.isArray(latest.changelog)) ? latest.changelog : [];
-  if (!items.length){
-    block.classList.add("hidden");
-    return;
-  }
-
-  ver.textContent = "نسخه " + ((latest && latest.version) || (app && app.latest_version) || "");
-
-  list.textContent = "";
-  for (var i = 0; i < items.length; i++){
-    var li = document.createElement("li");
-    li.textContent = items[i];
-    list.appendChild(li);
-  }
-
-  block.classList.remove("hidden");
 }
 
 /* ---------- panel-controlled website banner + contact (LIVE) ---------- */
@@ -120,8 +93,8 @@ function renderAppConfig(m){
         if (s) s.classList.add("hidden");
       } else {
         img.classList.add("hidden");
-        if (t){ t.classList.remove("hidden"); t.textContent = wb.title || "محل تبلیغ شما"; }
-        if (s){ s.classList.remove("hidden"); s.textContent = wb.subtitle || "جهت ثبت تبلیغ با ما در ارتباط باشید"; }
+        if (t){ t.classList.remove("hidden"); t.textContent = wb.title || "Your ad here"; }
+        if (s){ s.classList.remove("hidden"); s.textContent = wb.subtitle || "Contact us to place your ad"; }
       }
       var action = wb.action || "contact";
       banner.onclick = function(){
@@ -148,7 +121,7 @@ function renderAppConfig(m){
     var copyLabel = copyBtn.textContent;
     copyBtn.onclick = function(){
       navigator.clipboard.writeText(id).then(function(){
-        copyBtn.textContent = "کپی شد ✓";
+        copyBtn.textContent = "Copied ✓";
         setTimeout(function(){ copyBtn.textContent = copyLabel; }, 1500);
       });
     };

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Professor VPN — دانلود</title>
-<meta name="description" content="دانلود Professor VPN — فیلترشکن سریع و امن اندروید با هسته واقعی Xray (VLESS / VMESS)">
+<title>Professor VPN — Download</title>
+<meta name="description" content="Download Professor VPN — fast and secure Android VPN powered by a real Xray core (VLESS / VMESS)">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="logo.png">
 <style>
@@ -89,29 +89,6 @@ a{color:var(--violet2);text-decoration:none}
 .contact-id .mini.primary{background:linear-gradient(135deg,var(--violet2),var(--violet-d));
   color:#fff;border-color:rgba(255,255,255,.18)}
 
-/* ---------- changelog (what's new) ---------- */
-.changelog{margin-top:22px;border:1px solid var(--line);border-radius:18px;padding:clamp(18px,5vw,24px);
-  background:var(--card);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);text-align:right;
-  box-shadow:0 16px 50px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.04)}
-.changelog h2{font-size:clamp(14px,4vw,16px);letter-spacing:.04em;margin-bottom:6px;
-  display:inline-flex;align-items:center;gap:9px;color:var(--txt)}
-.changelog h2 .dot{width:8px;height:8px;border-radius:50%;background:var(--violet2);
-  box-shadow:0 0 12px var(--violet)}
-.changelog .cl-ver{color:var(--violet2);font-size:12.5px;letter-spacing:.06em;margin-bottom:14px}
-.changelog ul{list-style:none;margin:0;padding:0}
-.changelog li{position:relative;color:var(--dim);font-size:13.5px;line-height:1.9;
-  padding:7px 0;border-top:1px solid var(--line)}
-.changelog li:first-child{border-top:0}
-.changelog li::before{content:"";position:absolute;top:15px;width:7px;height:7px;border-radius:50%;
-  background:var(--violet2);box-shadow:0 0 10px var(--violet)}
-/* RTL: bullet on the right; LTR: bullet on the left */
-html[dir="rtl"] .changelog{text-align:right}
-html[dir="rtl"] .changelog li{padding-right:18px;padding-left:0}
-html[dir="rtl"] .changelog li::before{right:0;left:auto}
-html[dir="ltr"] .changelog{text-align:left}
-html[dir="ltr"] .changelog li{padding-left:18px;padding-right:0}
-html[dir="ltr"] .changelog li::before{left:0;right:auto}
-
 /* ---------- footer ---------- */
 footer{text-align:center;color:var(--dim);font-size:11.5px;padding:30px 0 6px;
   border-top:1px solid var(--line);margin-top:30px;letter-spacing:.06em}
@@ -130,33 +107,26 @@ footer{text-align:center;color:var(--dim);font-size:11.5px;padding:30px 0 6px;
 
   <!-- actions -->
   <div class="actions">
-    <button class="btn btn-dl" id="main-dl">⬇ دانلود مستقیم برای اندروید</button>
-    <button class="btn btn-ghost" id="support-btn">پشتیبانی و ارتباط</button>
-    <div class="dl-meta" id="dl-meta">APK یونیورسال · امضا شده · Android 7+</div>
-  </div>
-
-  <!-- what's new changelog (driven from the download manifest) -->
-  <div class="changelog hidden" id="changelog">
-    <h2><span class="dot"></span> <span>تازه‌های این نسخه</span></h2>
-    <div class="cl-ver" id="cl-ver"></div>
-    <ul id="cl-list"></ul>
+    <button class="btn btn-dl" id="main-dl">⬇ Direct download for Android</button>
+    <button class="btn btn-ghost" id="support-btn">Support &amp; Contact</button>
+    <div class="dl-meta" id="dl-meta">Universal APK · Signed · Android 7+</div>
   </div>
 
   <!-- website banner (admin-controlled, independent from in-app banner) -->
   <div class="web-banner" id="web-banner">
     <img id="wb-img" class="hidden" alt="">
-    <div class="bt" id="wb-title">محل تبلیغ شما</div>
-    <div class="bs" id="wb-subtitle">جهت ثبت تبلیغ با ما در ارتباط باشید</div>
+    <div class="bt" id="wb-title">Your ad here</div>
+    <div class="bs" id="wb-subtitle">Contact us to place your ad</div>
   </div>
 
   <!-- support / contact -->
   <div class="support" id="support">
-    <h2><span class="dot"></span> <span id="contact-title">پشتیبانی</span></h2>
-    <div class="txt" id="contact-text">جهت ثبت تبلیغات و استعلام قیمت بنر با ما در ارتباط باشید.</div>
+    <h2><span class="dot"></span> <span id="contact-title">Support</span></h2>
+    <div class="txt" id="contact-text">Contact us for ad placement and banner pricing.</div>
     <div class="contact-id">
       <span class="chip" id="contact-chip">@mx_pr</span>
-      <button class="mini" id="copy-id">کپی آیدی</button>
-      <button class="mini primary" id="send-msg">ارسال پیام</button>
+      <button class="mini" id="copy-id">Copy ID</button>
+      <button class="mini primary" id="send-msg">Send message</button>
     </div>
   </div>
 
